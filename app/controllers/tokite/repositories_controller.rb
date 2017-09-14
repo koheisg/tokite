@@ -17,6 +17,10 @@ module Tokite
     end
 
     def create
+      unless params[:names]
+        flash[:eroor] = "Please select repositories."
+        return redirect_to new_repository_path
+      end
       params[:names].each do |name|
         github_repo = octokit_client.repository(name)
         Repository.hook!(octokit_client, github_repo)
