@@ -28,6 +28,7 @@ namespace :tokite do
       schema_dir = app_path("schema")
       tokite_schema_dir = app_path("schema/tokite")
       mkdir_p(tokite_schema_dir) unless Dir.exist?(tokite_schema_dir)
+      cp "#{engine_path("schema")}/Schemafile", schema_dir unless File.exist?(File.join(schema_dir, 'Schemafile'))
 
       Dir.glob("#{engine_path("schema")}/**/*.schema").each do |src_path|
         basename = File.basename(src_path)
