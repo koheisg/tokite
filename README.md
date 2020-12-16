@@ -23,9 +23,9 @@ end
 ### Setup database
 ```console
 $ ./bin/rails db:create
-$ ./bin/rails app:tokite:ridgepole:install
-$ ./bin/rails app:tokite:ridgepole:apply
-$ RAILS_ENV=test ./bin/rails app:tokite:ridgepole:apply
+$ ./bin/rails tokite:ridgepole:install
+$ ./bin/rails tokite:ridgepole:apply
+$ RAILS_ENV=test ./bin/rails tokite:ridgepole:apply
 ```
 
 ### Setup yarn pkg
